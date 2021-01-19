@@ -1,0 +1,286 @@
+% João Marcos Ferreira Personal CV
+
+\documentclass[paper=a4,fontsize=14pt]{article}
+\usepackage{amsmath,amsfonts,amsthm} 
+\usepackage[pdftex]{graphicx} 
+\usepackage[utf8]{inputenc}
+\usepackage[portuges]{babel}
+\usepackage[svgnames]{xcolor} 
+\usepackage{multicol}
+\usepackage{pslatex}
+\textheight=690px
+\usepackage{url} 
+\usepackage{wrapfig}
+\usepackage{relsize}
+\usepackage[bottom=1cm, top=3cm, left=3cm, right=2cm]{geometry}
+\usepackage{enumitem}
+   \setenumerate{nolistsep}
+   \setitemize{nolistsep}
+
+\let\olditemize\itemize
+\let\endolditemize\enditemize
+\renewenvironment{itemize}{%
+    \small
+    \olditemize
+}{%
+    \endolditemize
+}
+\pagestyle{empty}
+
+\usepackage{sectsty} 
+    \sectionfont{% 
+        \usefont{OT1}{cmr}{b}{n}% 
+        \sectionrule{0pt}{0pt}{-3pt}{1pt} 
+    }
+
+\newlength{\spacebox} 
+\settowidth{\spacebox}{8888888888888}
+\newcommand{\sepspace}{\vspace*{1em}}
+
+\newcommand{\Name}[1]{ 
+    \huge \usefont{OT1}{cmr}{b}{n} 
+    \textbf{#1} \par \normalsize \normalfont \vspace{.5em}
+}
+
+\newcommand{\NewPart}[1]{ \section*{\large \uppercase{#1}}}
+
+\newcommand{\PersonalEntry}[2]{
+        \noindent\hangindent=2em\hangafter=0        % Indentation
+        \parbox{\spacebox}{             % Box to align text
+        \textit{#1}}                    % Entry name (birth, address, etc.)
+        \hspace{1.5em} #2 \par}             % Entry value
+
+\newcommand{\SkillsEntry}[2]{                   % Same as \PersonalEntry
+        \noindent\hangindent=2em\hangafter=0        % Indentation
+        \parbox{\spacebox}{             % Box to align text
+        \textit{#1}}                    % Entry name (birth, address, etc.)
+        \hspace{1.5em} #2 \par}             % Entry value       
+        
+\newcommand{\EducationEntry}[4]{
+        \noindent \textbf{#1} \hfill            % Study
+        \colorbox{White}{%
+            \parbox{6em}{%
+            \hfill\color{Black}#2}} \par        % Duration
+        \noindent \textit{#3} \par          % School
+        \noindent\hangindent=2em\hangafter=0 \small #4  % Description
+        \normalsize \par}
+
+\newcommand{\WorkEntry}[4]{                     % Same as \EducationEntry
+        \noindent \textbf{#1} \hfill                % Company
+        \colorbox{White}{\color{Black}#2} \par          % Duration
+        \noindent \textit{#3} \par              % Jobname
+        \noindent\hangindent=2em\hangafter=0 \small #4      % Description
+        \normalsize \par \vspace*{.5em}}
+
+\newcommand{\Resume}[2]{                        % Resume
+        \noindent \textbf{#1: }                 % Title             
+        \noindent\hangindent=0em\hangafter=0 \small #2      % Description
+        \normalsize \par \vspace*{.5em}}        
+        
+%%% ------------------------------------------------------------
+%%% BEGIN DOCUMENT
+%%% ------------------------------------------------------------
+\begin{document}
+\begin{center}
+    \Name{João Marcos Ferreira}
+    
+    %%% Personal details
+    %%% ------------------------------------------------------------
+ João Pessoa PB\\
+    +55 83 993317183\\
+    \url{joaomarccos.ads@gmail.com}
+
+\end{center}
+%%% Education
+%%% ------------------------------------------------------------
+\NewPart{Educação}{} 
+
+\EducationEntry{Tecnólogo. Análise e Desenvolvimento de Sistemas}{2013-2016}{Instituto Federal de Educação, Ciência e Tecnologia da Paraíba - Cajazeiras - PB}{}
+\EducationEntry{Técnico. Técnico em Informática (Voltado a Programação)}{2009-2011}{Instituto Federal de Educação, Ciência e Tecnologia da Paraíba - Sousa - PB}{}
+
+%%% Skill and Relevant Coursework
+\NewPart{Habilidades e competências}{}
+\Resume{\textbf{Linguagens de Programação}}{Java, scala, JavaScript, PHP, C, C\#, HTML5, CSS3}
+\Resume{\textbf{Competências}}{Programação Orientada a Objetos, Algoritmos e Estrutura de Dados, Desenvolvimento de Aplicações Distribuídas, Processos de Desenvolvimento de Software, Desenvolvimento de Aplicações Corporativas, Padrões de Projeto de Software, Desenvolvimento de Aplicaçoes WEB, Análise e Projeto de Sistemas, Programação Para Dispositivos Móveis}  
+
+%%% Work experience
+%%% ------------------------------------------------------------
+\NewPart{Experiência Profissional}{}
+
+\WorkEntry{Pbsoft}{2018}{Analista Desenvolvedor}{
+\begin{itemize}
+    \item Desenvolvendo novas aplicações WEB para o Tribunal de Contas do Estado da Paraíba usando scala e migrando aplicações para o uso de nova pilha de tecnologia (scala, play, slick, akka actors)
+\end{itemize}
+}
+
+\WorkEntry{Conductor Tecnologia}{2017-2018}{Analista Desenvolvedor}{
+\begin{itemize}
+    \item Desenvolvendo aplicações de alta disponibilidade e criticidade que realizam o processamento de pagamentos e transações com cartão de crédito. 
+    \item Mantendo e melhorando ferramentas existentes dentro da empresa usando diferentes linguagens de programação como C\#, VB, Java, Groovy
+\end{itemize}
+}
+
+\WorkEntry{Stefanini}{2016-2017}{Desenvolvedor Java}{
+\begin{itemize}
+    \item Desenvolvendo aplicações WEB de grande porte para orgãos como Correios Brasil (Sistema para uso interno e controle de entregas de encomendas) e Polícia Federal (Sistema para controle de plantões em âmbito nacional)
+    \item Contribuindo no levantamento de estimativas
+    \item Auxiliando outras equipes no desenvolvimeto de aplicaçoes Java WEB
+\end{itemize}
+}
+
+\WorkEntry{Cartápio}{2016}{Fundador e Desenvolvedor}{
+\begin{itemize}
+    \item Iniciando a fundação da Startup Cartápio com colegas universitários, hoje com cinco integrantes
+    \item Desenvolvendo o produto \url{http://www.cartapio.com} (plataforma para delivery de comida com atuação voltada ao sertão paraibano)
+\end{itemize}
+}
+
+\WorkEntry{Recursive}{2015-2016}{Consultor Jr}{
+\begin{itemize}
+    \item Colaborando com a Empresa Júnior da Universidade, desenvolvendo aplicações internas para uso da própria instituiçao como também para clientes reais
+\end{itemize}
+}
+
+\begin{multicols}{2}
+[
+\NewPart{Participações e Conquistas}{}
+]
+\begin{itemize}
+    \item Desenvolvimento de Aplicações para Windows Phone (INDT, 2015)
+    \item Desenvolvimento de Jogos com Unity Engine \\(INDT, 2015)     
+    \item Voluntário no desenvolvimento de GeoPortal \\(IFPB, 2015)
+\end{itemize}
+\columnbreak
+\begin{itemize}
+    \item Olimpíada Cajazeirense de Programação \\(campeão, 2013)
+    \item Olimpíada Paraíbana de Programação \\(2014)
+    \item Olimpíada Brasileira de Informática (2014)
+\end{itemize}
+\end{multicols}
+
+
+
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Tecnologias}{}
+\begin{multicols}{3}[]
+\begin{itemize}[nolistsep]
+    \item[] \hspace{-0.5cm} \textbf{Java}
+    \item EJB
+    \item Servelets, JSP, JSF, FreeMarker
+    \item Jax-WS, Jax-RS
+    \item Spring Framework
+    \item JPA - Hibernate, EclipseLink  
+\end{itemize}
+\columnbreak
+\begin{itemize}[nolistsep]
+    \item[] \hspace{-0.5cm} \textbf{scala}
+    \item Play Framework
+    \item Slick
+    \item Akka Actors
+    \item specs2
+\end{itemize}
+\columnbreak
+\begin{itemize}[nolistsep]
+    \item[] \hspace{-0.5cm} \textbf{Relatórios}
+    \item Jasper Reports
+    \item IReport;
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}[]
+\begin{itemize}[nolistsep]
+    \item[] \hspace{-0.5cm} \textbf{WEB}
+    \item HTML5
+    \item CSS3
+    \item JavaScript 
+    \item Jquery 
+    \item AngularJS 
+    \item NodeJS 
+    \item Gulp 
+    \item Bower
+    \item Sass
+\end{itemize}
+
+\columnbreak
+\begin{itemize}[nolistsep]
+    \item[] \hspace{-0.5cm} \textbf{Projeto}
+    \item UML
+    \item XP
+    \item Scrum 
+\end{itemize}
+
+\columnbreak
+\begin{itemize}[nolistsep]
+    \item[] \hspace{-0.5cm} \textbf{Mobile}
+    \item Android Nativo 
+    \item Cordova 
+    \item Ionic    
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}[]
+\begin{itemize}[nolistsep]
+    \item[] \hspace{-0.5cm} \textbf{Ferramentas}
+    \item Git     
+    \item Maven 
+    \item Jazz SCM
+    \item TFS
+    \item Ant 
+    \item Gitlab
+    \item Andoid Studio 
+    \item Netbeans IDE 
+    \item Eclipse IDE
+\end{itemize}
+
+\columnbreak
+\begin{itemize}[nolistsep]
+    \item[] \hspace{-0.5cm} \textbf{Banco de Dados}
+    \item PostgreSQL (+PostGIS) 
+    \item SQL Server
+    \item MySQL 
+    \item Oracle
+    \item MongoDB 
+    \item Neo4J 
+    \item Redis    
+\end{itemize}
+
+\columnbreak
+\begin{itemize}[nolistsep]
+    \item[] \hspace{-0.5cm} \textbf{Testes}
+    \item JUnit 
+    \item DBUnit 
+    \item Mockito 
+    \item EasyMock;    
+\end{itemize}
+
+\end{multicols}
+
+\begin{multicols}{3}[]
+\begin{itemize}[nolistsep]
+    \item[] \hspace{-0.5cm} \textbf{SOA}
+    \item REST
+    \item SOAP
+\end{itemize}
+
+\columnbreak
+
+\begin{itemize}[nolistsep]
+    \item[] \hspace{-0.5cm} \textbf{Ambientes}
+    \item Linux 
+    \item Windows
+\end{itemize}
+
+\end{multicols}
+
+\NewPart{Idiomas}{}
+\SkillsEntry{Português}{Nativo}
+\SkillsEntry{Inglês}{Intermediário}
+%%% References
+%%% ------------------------------------------------------------
+
+\NewPart{Outras informações}{}
+\SkillsEntry{Github}{\url{http://github.com/joaomarccos}}
+\SkillsEntry{LinkedIn}{\url{http://br.linkedin.com/in/joaomarccos}}
+
+\end{document}

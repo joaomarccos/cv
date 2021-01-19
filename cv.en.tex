@@ -1,0 +1,268 @@
+% João Marcos Ferreira Personal CV
+
+\documentclass[paper=a4,fontsize=14pt]{article}
+\usepackage{amsmath,amsfonts,amsthm} 
+\usepackage[pdftex]{graphicx} 
+\usepackage[utf8]{inputenc}
+\usepackage[portuges]{babel}
+\usepackage[svgnames]{xcolor} 
+\usepackage{multicol}
+\usepackage{pslatex}
+\textheight=690px
+\usepackage{url} 
+\usepackage{wrapfig}
+\usepackage{relsize}
+\usepackage[bottom=1cm, top=3cm, left=3cm, right=2cm]{geometry}
+\usepackage{enumitem}
+   \setenumerate{nolistsep}
+   \setitemize{nolistsep}
+
+
+
+\let\olditemize\itemize
+\let\endolditemize\enditemize
+\renewenvironment{itemize}{%
+    \small
+    \olditemize
+}{%
+    \endolditemize
+}
+
+\usepackage{sectsty} 
+	\sectionfont{% 
+		\usefont{OT1}{cmr}{b}{n}% 
+		\sectionrule{0pt}{0pt}{-3pt}{1pt} 
+	}
+
+\newlength{\spacebox} 
+\settowidth{\spacebox}{8888888888888}
+\newcommand{\sepspace}{\vspace*{1em}}
+
+\newcommand{\Name}[1]{ 
+	\huge \usefont{OT1}{cmr}{b}{n} 
+	\textbf{#1} \par \normalsize \normalfont \vspace{.5em}
+}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C,CO]{
+    \Name{João Marcos Ferreira}
+}
+
+\newcommand{\NewPart}[1]{ \section*{\large \uppercase{#1}}}
+
+\newcommand{\PersonalEntry}[2]{
+		\noindent\hangindent=2em\hangafter=0 		% Indentation
+		\parbox{\spacebox}{				% Box to align text
+		\textit{#1}}					% Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}				% Entry value
+
+\newcommand{\SkillsEntry}[2]{					% Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 		% Indentation
+		\parbox{\spacebox}{				% Box to align text
+		\textit{#1}}					% Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}				% Entry value		
+		
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1} \hfill 			% Study
+		\colorbox{White}{%
+			\parbox{6em}{%
+			\hfill\color{Black}#2}} \par		% Duration
+		\noindent \textit{#3} \par			% School
+		\noindent\hangindent=2em\hangafter=0 \small #4 	% Description
+		\normalsize \par}
+
+\newcommand{\WorkEntry}[4]{						% Same as \EducationEntry
+		\noindent \textbf{#1} \hfill 				% Company
+		\colorbox{White}{\color{Black}#2} \par			% Duration
+		\noindent \textit{#3} \par				% Jobname
+		\noindent\hangindent=2em\hangafter=0 \small #4 		% Description
+		\normalsize \par \vspace*{.5em}}
+
+\newcommand{\Resume}[2]{						% Resume
+		\noindent \textbf{#1: } 				% Title				
+		\noindent\hangindent=0em\hangafter=0 \small #2   	% Description
+		\normalsize \par \vspace*{.5em}}		
+		
+%%% ------------------------------------------------------------
+%%% BEGIN DOCUMENT
+%%% ------------------------------------------------------------
+
+
+\begin{document}
+
+\begin{center}
+%%% Personal details
+%%% ------------------------------------------------------------
+João Pessoa PB\\
++55 83 993317183\\
+\url{joaomarccos.ads@gmail.com}
+\end{center}
+
+%%% Education
+%%% ------------------------------------------------------------
+\NewPart{Education}{} 
+
+\EducationEntry{Technologist. Analysis and Systems Development}{2013-2016}{Federal Institute of Education, Science and Technology of Paraíba}{}
+\EducationEntry{Technical. Computer Technician (Programming)}{2009-2011}{Federal Institute of Education, Science and Technology of Paraíba}{}
+
+%%% Skill and Relevant Coursework
+\NewPart{Skills and competences}{}
+\Resume{\textbf{Programming languages}}{Java, scala,  JavaScript, PHP, C, C\#, HTML5, CSS3}
+\Resume{\textbf{Competences}}{WEB Application Development, Object Oriented Programming, Functional Programming}  
+
+%%% Work experience
+%%% ------------------------------------------------------------
+\NewPart{Professional experience}{}
+
+\WorkEntry{Pbsoft}{2018}{System Development Analyst}{
+\begin{itemize}
+    \item Team Lead and Developer of web applications for the Paraíba's Audit Court using scala and migrating existing software for use the new stack (scala, play, slick, akka actors)
+    \item Projects:
+    \begin{itemize}
+        \item SAGRES - System for Monitoring the Management of Company Resources. \\Available on \url{http://sagrescaptura.tce.pb.gov.br}
+    \end{itemize}
+\end{itemize}
+}
+
+\WorkEntry{Conductor Tecnologia}{2017-2018}{System Development Analyst}{
+\begin{itemize}
+    \item Development of high avaibility and criticals appllications for credit card transactions
+    \item Maintening and improving  existing tools using different programming languages like C\#, VB, Java, Groovy
+    \item Projects:
+    \begin{itemize}
+        \item Plugin for software from own Conductor (SGR) - importing and processing bank files from invoice payments through CNAB files (National Center for Bank Automation) for a lot of Banks like Santander, Itau, BB, Daycoval, Caixa, HSBC and others
+        \item Plugin for software from own Conductor (SGR) - Registration of bank payments for Santander BANK
+        \item FIDC - Credit Rights Investment Fund. Conductor Platform
+        \item File x - Positional and delimited file generator from XML templates and SQL scripts
+    \end{itemize}
+\end{itemize}
+}
+
+\WorkEntry{Stefanini}{2016}{Java Developer}{
+\begin{itemize}
+    \item Developing large WEB applications for agencies such as Correios Brasil (System for internal use and control of parcel deliveries) and Federal Police (System for control of shifts nationwide)
+    \item Contributing to the collection of estimates
+    \item Assisting other teams in the development of Java WEB applications
+    \item Projects:
+    \begin{itemize}
+        \item Correios SLA (interrupted) - Control of internal orders for the Correios
+        \item Livro Plantão - Control of shifts Federal Police
+        \item Mobilização - Control of mobilization of federal police teams
+        \item Contabilidade - Controll of Accounting information for PRODEMGE - Information Technology Company of the State of Minas Gerais
+        \item Programação Financeira - Controll of finanances information for PRODEMGE
+    \end{itemize}
+\end{itemize}
+}
+
+\newpage
+
+\WorkEntry{Cartápio}{2016}{Founder, Developer}{
+\begin{itemize}
+    \item Beginning the foundation of Startup Cartápio with university colleagues, today with five members
+    \item Developing the product \url{http://www.cartapio.com} (discontinued) (platform for delivery of food with action in the backlands of Paraíba)
+\end{itemize}
+}
+
+\WorkEntry{Recursive}{2015-2016}{Jr Consultant}{
+\begin{itemize}
+    \item Collaborating with the University's Junior Company, developing internal applications for the institution's own use and for real clients as well
+    \item Projects:
+    \begin{itemize}
+        \item Recursive portfolio site available on \\ \url{http://recursive.com.br/portfolio/index.html}
+        \item Portfolio creator plugin available on \\ \url{https://joaomarccos.github.io/project-organizer/}
+    \end{itemize}
+\end{itemize}
+}
+
+\begin{multicols}{2}
+[
+\NewPart{Participations and Achievements}{}
+]
+\begin{itemize}
+    \item Development of Windows Phone Applications (INDT, 2015)
+    \item Game Development with Unity Engine \\(INDT, 2015)     
+    \item Volunteer in the development of GeoPortal \\(IFPB, 2015)
+\end{itemize}
+\columnbreak
+\begin{itemize}
+    \item Cajazeiras' Programming Olympiad \\(2013)
+    \item Paraíba's Programming Olympiad \\(2014)
+    \item Brazil's Programming Olympiad  (2014)
+\end{itemize}
+\end{multicols}
+
+
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Technology}{}
+\begin{multicols}{3}[]
+\begin{itemize}[nolistsep]
+	\item[] \hspace{-0.5cm} \textbf{Java}
+    \item EJB
+    \item Servelets, JSP, JSF, FreeMarker
+    \item Jax-WS, Jax-RS
+	\item Spring Framework
+	\item JPA 
+\end{itemize}
+\columnbreak
+\begin{itemize}[nolistsep]
+	\item[] \hspace{-0.5cm} \textbf{scala} 
+    \item Play Framework
+    \item Slick
+    \item Akka Actors
+    \item specs2
+\end{itemize}
+\columnbreak
+\begin{itemize}[nolistsep] 
+	\item[] \hspace{-0.5cm} \textbf{WEB}
+    \item HTML5
+    \item CSS3 / Sass
+    \item JavaScript 
+    \item Jquery 
+    \item AngularJS/Angular 
+    \item Gulp 
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{3}[]
+
+\columnbreak
+\begin{itemize}[nolistsep]
+	\item[] \hspace{-0.5cm} \textbf{Banco de Dados}
+    \item PostgreSQL (+PostGIS)
+    \item SQL Server
+    \item MySQL 
+    \item Oracle
+    \item MongoDB 
+    \item Neo4J 
+    \item Redis
+\end{itemize}
+
+\columnbreak
+\begin{itemize}[nolistsep]
+	\item[] \hspace{-0.5cm} \textbf{Testes}
+    \item JUnit
+    \item DBUnit 
+    \item Mockito 
+    \item EasyMock; 
+\end{itemize}
+
+\columnbreak
+\begin{itemize}[nolistsep]
+	\item[] \hspace{-0.5cm} \textbf{SOA}
+    \item REST
+    \item SOAP
+\end{itemize}
+\end{multicols}
+
+\NewPart{Languages}{}
+\SkillsEntry{Portuguese}{Native}
+\SkillsEntry{English}{Basic - Intermediate}
+
+\NewPart{Other information}{}
+\SkillsEntry{Github}{\url{http://github.com/joaomarccos}}
+\SkillsEntry{LinkedIn}{\url{http://br.linkedin.com/in/joaomarccos}}
+
+\end{document}
